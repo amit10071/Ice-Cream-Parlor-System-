@@ -1,0 +1,187 @@
+//A PROJECT ON ICECREAM PARLOUR USING CLASS AND FILE HANDLING 
+#include<iostream>
+#include<string.h>
+#include<fstream>
+#include<stdlib.h>
+using namespace std;
+class ice
+{
+	char name[30];
+	int price;
+	int quantity;
+	public:
+		void costomer_show();
+	    void view();
+		void show_menu();
+		
+}i; 
+void ice :: costomer_show()
+{
+	ofstream outfile;
+	outfile.open("icecream.txt");
+	
+	cout<<"\n\t\t|....................WELCOME TO ICECREAM PARLOUR....................|\t\t\t";
+	cout<<"\n\t\t*********************************************************************\t";	
+	outfile<<"\n\t\t|....................WELCOME TO ICECREAM PARLOUR....................|\t\t\t";
+	cout<<"\n\t\t*********************************************************************\t";	
+	outfile.close();
+}
+void ice ::view()
+{
+
+	char name[20];
+	char address[20];
+    long int cnt_no;
+	int id;
+	cout<<"\n\n................WOULD YOU LIKE TO PREFER ICE CREAM IN OUR PARLOUR ?.....................\n";
+	cout<<"\n\nENTER Y/y FOR YES AND N/n for NO..........................>          ";
+	char choice;
+	start:
+	cin>>choice;
+	if(choice=='Y'||choice=='y')
+	{
+	cout<<"\n****************************************************************************************************************\t";
+	cout<<"\n\n              PLEASE ENTER YOU NAME SIR           \n";
+	cin>>name;
+	cout<<"\n\n              ENTER YOUR ADDRESS                  \n";
+	cin>>address;
+	cout<<"\n\n              ENTER YOUR CONTACT NUMBER           \n";
+	cin>>cnt_no;
+	}
+	else if(choice=='N'||choice=='n')
+	{
+		cout<<"\n\n..............THANKYOU FOR COMING SIR    HAVE A NICE DAY !................\n";
+	}
+else
+{
+cout<<"\n..............WRONG CHOICE ENTERED PLEASE ENTER CORRECT OPTION..........\n";
+fflush(stdin);
+}
+}
+void ice::show_menu()
+{
+		ofstream outfile;
+	outfile.open("icecream.txt");
+	int total=0;
+   	int p1=30,p2=20,p3=50,p4=40,p5=35,p6=45;
+   	int quantity;
+   int ch1; char k;
+   char choice1;
+   cout<<"\n\n\t............................HERE IS YOUR LIST FOR  ICECREAM..........................\t\t";
+   cout<<"\n\n\t|          |         ICECREAM NAME          |          PRICE               |";
+   cout<<"\n\n\t|          |         1.VALLILA              |          30 RS               |";
+   cout<<"\n\n\t|          |         2.KULFI                |          20 RS               |";	
+   cout<<"\n\n\t|          |         3.STRAWBERRY           |          50 RS               |";
+   cout<<"\n\n\t|          |         4.TUTIFRUITY           |          40 RS               |";
+   cout<<"\n\n\t|          |         5.MAGNUM               |          35 RS               |";
+   cout<<"\n\n\t|          |         6.PISTA                |          45 RS               |"<<endl<<endl;
+   
+   cout<<"WANTS TO PLACE AN ORDER? :"<<endl;
+   choice:
+   cin>>k;
+  
+   if(k=='y'||k=='Y')
+   {
+   start:
+   cout<<"\n\n\n\t ENTER CHOICE NUMBER OF YOUR ICE CREAM  -->   ";
+   cin>>ch1;
+   switch(ch1)
+   {
+   	case 1:
+   	 cout<<"HOW MANY NUMBER OF VANILLA YOU WANT TO PREFER -->  ";
+   	 cin>>quantity;
+   	 total=p1*quantity;
+   	 cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	 outfile<<"name of the icecream :vanilla"<<endl<<endl;
+   	 outfile<<"price  of the icecream :30"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS  :"<<total<<"RS"<<endl<<endl;
+   	 break;
+   	case 2:
+   	 cout<<"HOW MANY NUMBER OF KULFI YOU WANT TO PREFER--->";
+   	 cin>>quantity;
+   	 total=p2*quantity;
+   	  cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	  outfile<<"name of the icecream :kulfi"<<endl<<endl;
+   	 outfile<<"price  of the icecream :20"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS :"<<total<<"RS"<<endl<<endl;
+   	 break;
+   	case 3:
+   	 cout<<"HOW MANY NUMBER OF STRAWBERRY YOU WANT TO PREFER--->";
+   	 cin>>quantity;
+   	 total=p3*quantity;
+   	  cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	  outfile<<"name of the icecream :strawberry"<<endl<<endl;
+   	 outfile<<"price  of the icecream :50"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS  :"<<total<<"RS"<<endl<<endl;
+   	 break;
+   	case 4:
+   	 cout<<"HOW MANY NUMBER OF TUTIFRUITY YOU WANT TO PREFER--->";
+   	 cin>>quantity;
+   	 total=p4*quantity;
+   	  cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	  outfile<<"name of the icecream :tutti frutti"<<endl<<endl;
+   	 outfile<<"price  of the icecream :40"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS  :"<<total<<"RS"<<endl<<endl;
+   	 break;
+   	case 5:
+   	cout<<"HOW MANY NUMBER OF MAGNUM YOU WANT TO PREFER--->";
+   	cin>>quantity;
+   	total=p5*quantity;
+   	 cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	 outfile<<"name of the icecream :MAGNUM"<<endl<<endl;
+   	 outfile<<"price  of the icecream :35"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS  :"<<total<<"RS"<<endl<<endl;
+   	break;
+   	case 6:
+   	cout<<"HOW MANY NUMBER OF PISTA YOU WANT TO PREFER--->";
+   	cin>>quantity;
+   	total=p6*quantity;
+   	 cout<<"TOTAL PRICE IS:"<<total<<endl<<endl;
+   	 outfile<<"name of the icecream :PISTA"<<endl<<endl;
+   	 outfile<<"price  of the icecream :45"<<endl<<endl;
+   	 outfile<<"quantity of the icecream :"<<quantity<<endl<<endl;
+   	 outfile<<"TOTAL BILL IS  :"<<total<<"RS"<<endl<<endl;
+   	break;
+   	case 7:
+   	cout<<"ENTER 0 TO EXIT--->";
+   	exit(0);
+   	break;
+   	default:
+   	cout<<" INVAILED INPUT SIR PLS ENTER CORRECT NUMBER--->";
+   	break;
+	   outfile.close();	
+   }//switch
+  cout<<"DO YOU WANT TO PLACE ORDER AGAIN(Y/N)?";
+  ch:
+  cin>>choice1;
+  if(choice1=='Y'||choice1=='y')
+  goto start;
+  else if(choice1=='n'||choice1=='N')
+  cout<<"\n\n|..........THANKS FOR VISITING...........|";
+  else
+  {
+  cout<<"WRONG CHOICE ENTERED...\nPLEASE ENTER AGAIN\n";
+  goto ch;
+  } 
+  }//if
+   else if(k=='n'||k=='N')
+   {
+   	cout<<"\n\n\|.............THANKS FOR VISITING...............|"<<endl<<endl;
+   }
+   else
+   {
+   cout<<"WRONG CHOICE ENTERED...\nPLEASE ENTER AGAIN\n";
+   goto choice;
+   }
+}//function
+int main()
+{
+	i.costomer_show();
+	i.view();
+	i.show_menu();
+}
